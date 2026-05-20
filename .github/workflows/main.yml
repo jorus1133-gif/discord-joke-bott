@@ -1,5 +1,8 @@
 name: daily script
 
+env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+
 on:
   schedule:
     - cron: '0 5,17 * * *'
