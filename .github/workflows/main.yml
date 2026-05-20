@@ -19,4 +19,4 @@ jobs:
       - name: Run script
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-        run: python joke.py
+        run: python3 joke.py
