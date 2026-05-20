@@ -2,7 +2,7 @@ name: Daily Joke
 
 on:
   schedule:
-    - cron: '0 19 * * *'
+    - cron: '0 5,7,17,19 * * *'
   workflow_dispatch:
 
 jobs:
