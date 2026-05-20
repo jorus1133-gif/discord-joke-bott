@@ -1,8 +1,9 @@
 name: Daily Joke
+
 on:
   schedule:
-    - cron: '50 18,19,20 * * *'
-  workflow_dispatch: 
+    - cron: '0 19 * * *'
+  workflow_dispatch:
 
 jobs:
   run-joke:
