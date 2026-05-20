@@ -1,27 +1,22 @@
-name: daily script
-
-env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-
+name: Daily Joke
 on:
   schedule:
-    - cron: '43 18,19,20 * * *'
+    - cron: '50 18,19,20 * * *'
   workflow_dispatch: 
 
 jobs:
-  build:
+  run-joke:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-
       - name: Install dependencies
-        run: pip install -r requirements.txt
-
+        run: pip install discord.py aiohttp
       - name: Run script
-        run: joke.py
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        run: python joke.py
